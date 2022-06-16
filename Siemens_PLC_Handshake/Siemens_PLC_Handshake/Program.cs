@@ -47,9 +47,9 @@ namespace Siemens_PLC_Handshake
             Plc_Siemens.Write(PC_Request_Connection.Address, true);
             Console.WriteLine("PC Request to connect send...");
 
-            Console.WriteLine("----------------------------------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------------------");
             Console.WriteLine("Waiting for PLC Response... (Retrying every 500msec)");
-            Console.WriteLine("----------------------------------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------------------------------------------------");
 
 
             do
