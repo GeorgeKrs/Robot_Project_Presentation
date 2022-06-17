@@ -22,8 +22,8 @@ namespace Siemens_PLC_Handshake
             var CommunicationWatch = new System.Diagnostics.Stopwatch();
             //End of watches for operations
 
-            var PC_Request_Connection = new Classes.Bit_Info("DB1.DBX0.0", false);
-            var PLC_Response_Connection = new Classes.Bit_Info("DB1.DBX0.1", false);
+            var PC_To_PLC_Request_Connection = new Classes.Bit_Info("DB1.DBX0.0", false);
+            var PLC_To_PC_Response_Connection = new Classes.Bit_Info("DB1.DBX0.1", false);
             var PC_Ready = new Classes.Bit_Info("DB1.DBX0.2", false);
             var PC_Busy = new Classes.Bit_Info("DB1.DBX0.3", true);
             var PLC_WriteData = new Classes.Bit_Info("DB1.DBX0.4", false);
@@ -37,14 +37,14 @@ namespace Siemens_PLC_Handshake
             Plc_Siemens.Open();
             Console.WriteLine("Initialize Connection...");
 
-            Plc_Siemens.Write(PC_Request_Connection.Address, false);
-            Plc_Siemens.Write(PLC_Response_Connection.Address, false);
+            Plc_Siemens.Write(PC_To_PLC_Request_Connection.Address, false);
+            Plc_Siemens.Write(PLC_To_PC_Response_Connection.Address, false);
             Plc_Siemens.Write(PC_Ready.Address, false);
             Plc_Siemens.Write(PC_Busy.Address, true);
             statusInformation.Connection_Success_Recorded = false;
 
             //Starting Connection Process
-            Plc_Siemens.Write(PC_Request_Connection.Address, true);
+            Plc_Siemens.Write(PC_To_PLC_Request_Connection.Address, true);
             Console.WriteLine("PC Request to connect send...");
 
             Console.WriteLine("-----------------------------------------------------------------------------------");
@@ -54,7 +54,7 @@ namespace Siemens_PLC_Handshake
 
             do
             {
-                if (PC_Connection_Lost && PLC_Response_Connection.Status == false) 
+                if (PC_Connection_Lost && PLC_To_PC_Response_Connection.Status == false) 
                     {
                         database.Record_PLC_ConnectionStatus(statusInformation.PC_Connection_Lost);
                         Console.WriteLine("**************************************************************");
@@ -65,10 +65,10 @@ namespace Siemens_PLC_Handshake
                 }
 
                 //Try to Connect
-                if (PLC_Response_Connection.Status == false)
+                if (PLC_To_PC_Response_Connection.Status == false)
                 {
                     EventWatch.Start();
-                    PLC_Response_Connection.Status = (bool)Plc_Siemens.Read(PLC_Response_Connection.Address);
+                    PLC_To_PC_Response_Connection.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Response_Connection.Address);
 
                     statusInformation.Plc_Connection_Error_Counter++;
 
@@ -99,13 +99,13 @@ namespace Siemens_PLC_Handshake
                     Thread.Sleep(500);
 
                 }
-                else if (PLC_Response_Connection.Status == true)
+                else if (PLC_To_PC_Response_Connection.Status == true)
                 // Connection Established
                 {
 
                     //Varible to know that the script left the second condition 
                     PC_Connection_Lost = true;
-                    PLC_Response_Connection.Status = (bool)Plc_Siemens.Read(PLC_Response_Connection.Address);
+                    PLC_To_PC_Response_Connection.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Response_Connection.Address);
 
                     if (statusInformation.Connection_Success_Recorded == false)
                     {
@@ -137,15 +137,9 @@ namespace Siemens_PLC_Handshake
                     // on PLC Side by toggling the status of the variable. If PLC do not receive
                     // the bit status as true for a specific amount of time, then PLC sets an comm
                     // error bit
-
-
                     CommunicationWatch.Start();
-                    
-
                     if (CommunicationWatch.ElapsedMilliseconds > 5000)
-                    {
-                    
-
+                    { 
                         CommunicationWatch.Stop();
                         CommunicationWatch.Reset();
                         Plc_Siemens.Write(TestConnection.Address, !TestConnection.Status);
