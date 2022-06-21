@@ -6,6 +6,7 @@ const configuration = mysql2.createConnection({
   password: "1234",
   database: "robot_project_provik_presantation",
   port: 3000,
+  timezone: "utc",
 });
 
 module.exports = { configuration, mysql2 };
