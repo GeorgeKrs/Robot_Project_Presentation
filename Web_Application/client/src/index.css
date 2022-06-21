@@ -30,3 +30,8 @@ code {
 .font-awesome-active {
   color: var(--bs-warning);
 }
+
+.video-div {
+  border: 3px solid var(--bs-light);
+  border-radius: 4px;
+}

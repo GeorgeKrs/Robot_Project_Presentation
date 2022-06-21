@@ -17,8 +17,14 @@ function App() {
         <PLC />
         <Videos />
       </div>
-      <div className="d-flex justify-content-center bg-dark">
-        <video style={{ width: "1000px" }} ref={videoElement} controls autoPlay>
+      <div className="d-flex justify-content-center bg-dark p-5">
+        <video
+          className="video-div"
+          style={{ width: "1000px" }}
+          ref={videoElement}
+          controls
+          autoPlay
+        >
           <source src={Robot_1_Video_id_1} type="video/mp4" />
         </video>
       </div>
