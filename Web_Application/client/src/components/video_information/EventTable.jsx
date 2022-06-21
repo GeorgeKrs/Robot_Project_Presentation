@@ -21,18 +21,27 @@ const EventTable = (props) => {
   return (
     <div>
       <h4 className="header-text">Videos History Table</h4>
-      <table className="mt-2 table table-dark table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Robot id</th>
-            <th>Video id</th>
-            <th>Date | Time</th>
-          </tr>
-        </thead>
+      {props.loading ? (
+        <div className="d-inline-flex">
+          <div className="spinner-border text-dark" role="status"></div>
+          <div className="px-1 text-dark">
+            <b>Fetching history video data.</b>
+          </div>
+        </div>
+      ) : (
+        <table className="mt-2 table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Robot id</th>
+              <th>Video id</th>
+              <th>Date | Time</th>
+            </tr>
+          </thead>
 
-        <tbody>{editedData}</tbody>
-      </table>
+          <tbody>{editedData}</tbody>
+        </table>
+      )}
     </div>
   );
 };

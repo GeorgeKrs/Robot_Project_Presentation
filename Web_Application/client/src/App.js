@@ -1,33 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { Routes, Route, Navigate } from "react-router";
 
 import Header from "./components/header/index";
-import PLC from "./components/plc_information/index";
-import Videos from "./components/video_information/index";
 
-import Robot_1_Video_id_1 from "../src/assets/Videos/Robot_1_Video_id_1.mp4";
+import Diagnostics from "./components/screens/Diagnostics";
+import Robot_1 from "./components/screens/Robot_1";
+import Robot_2 from "./components/screens/Robot_2";
 
 function App() {
-  const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-  const videoElement = useRef();
-
   return (
     <div className="bg-light">
       <Header />
-      <div className="mt-5 d-flex justify-content-around">
-        <PLC />
-        <Videos />
-      </div>
-      <div className="d-flex justify-content-center bg-dark p-5">
-        <video
-          className="video-div"
-          style={{ width: "1000px" }}
-          ref={videoElement}
-          controls
-          autoPlay
-        >
-          <source src={Robot_1_Video_id_1} type="video/mp4" />
-        </video>
-      </div>
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/diagnostics" />} />
+        <Route path="/diagnostics" element={<Diagnostics />} />
+        <Route path="/robot1" element={<Robot_1 />} />
+        <Route path="/robot2" element={<Robot_2 />} />
+      </Routes>
     </div>
   );
 }

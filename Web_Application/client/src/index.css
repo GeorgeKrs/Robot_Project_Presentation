@@ -21,6 +21,7 @@ code {
 
 .font-awesome {
   color: var(--bs-light);
+  cursor: pointer;
 }
 
 .font-awesome:hover {

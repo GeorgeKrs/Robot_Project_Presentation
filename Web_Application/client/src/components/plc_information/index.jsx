@@ -19,7 +19,7 @@ const PLC = () => {
 
   return (
     <div>
-      <EventTable data={dataFromApi} />
+      <EventTable loading={loading} data={dataFromApi} />
     </div>
   );
 };
