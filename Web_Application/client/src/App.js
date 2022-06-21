@@ -6,9 +6,9 @@ import Videos from "./components/video_information/index";
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-light">
       <Header />
-      <div className="d-flex justify-content-around">
+      <div className="mt-5 d-flex justify-content-around">
         <PLC />
         <Videos />
       </div>

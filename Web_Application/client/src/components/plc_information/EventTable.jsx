@@ -18,7 +18,7 @@ const EventTable = (props) => {
   return (
     <div>
       <h4 className="header-text">PLC Status Table</h4>
-      <table className="mt-2 table table-striped">
+      <table className="mt-2 table table-dark table-striped">
         <thead>
           <tr>
             <th>#</th>
