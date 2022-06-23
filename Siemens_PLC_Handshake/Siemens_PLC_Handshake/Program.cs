@@ -26,8 +26,15 @@ namespace Siemens_PLC_Handshake
             var PLC_To_PC_Response_Connection = new Classes.Bit_Info("DB1.DBX0.1", false);
             var PC_Ready = new Classes.Bit_Info("DB1.DBX0.2", false);
             var PC_Busy = new Classes.Bit_Info("DB1.DBX0.3", true);
-            var PLC_WriteData = new Classes.Bit_Info("DB1.DBX0.4", false);
             var TestConnection = new Classes.Bit_Info("DB1.DBX0.5", false);
+
+            var PLC_To_PC_Ready_To_Play_Video_Robot_1 = new Classes.Bit_Info("DB1.DBX0.4", false);
+            var Robot_1_Record_Made = false;
+            var PC_To_PLC_Video_Playing_Robot_1 = new Classes.Bit_Info("DB1.DBX0.7", false);
+            var PC_To_PLC_Video_Done_Playing_Robot_1 = new Classes.Bit_Info("DB1.DBX1.0", false);
+
+            var PC_To_PLC_Video_Playing_Robot_2 = new Classes.Bit_Info("DB1.DBX1.1", false);
+            var PC_To_PLC_Video_Done_Playing_Robot_2 = new Classes.Bit_Info("DB1.DBX1.2", false);
 
             bool PC_Connection_Lost = false;
 
@@ -41,6 +48,11 @@ namespace Siemens_PLC_Handshake
             Plc_Siemens.Write(PLC_To_PC_Response_Connection.Address, false);
             Plc_Siemens.Write(PC_Ready.Address, false);
             Plc_Siemens.Write(PC_Busy.Address, true);
+
+
+            Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
+            Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, false);
+
             statusInformation.Connection_Success_Recorded = false;
 
             //Starting Connection Process
@@ -124,21 +136,56 @@ namespace Siemens_PLC_Handshake
                     }
 
                     EventWatch.Start();
-                    if (EventWatch.ElapsedMilliseconds > 1000)
+                    if (EventWatch.ElapsedMilliseconds > 2000)
                     {
-                        Console.WriteLine("Connected and Waiting..");
+                        Console.WriteLine("PC Connected and Listening on IP: 192.168.10.10");
                         Console.WriteLine("----------------------------------------------------------------------------------");
 
                         EventWatch.Stop();
                         EventWatch.Reset();
                     }
 
+
+
+                    PLC_To_PC_Ready_To_Play_Video_Robot_1.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Ready_To_Play_Video_Robot_1.Address);
+                    var video_id = (ushort)Plc_Siemens.Read("DB1.DBW2.0");
+
+                    if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == false && video_id != 0)
+                    {
+                        Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, false);
+
+                        Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, true);
+
+                        Robot_1_Record_Made = true;
+                        PC_To_PLC_Video_Done_Playing_Robot_1.Status = false;
+                        database.AddVideo_OnDatabase(video_id, statusInformation);
+
+                        Console.WriteLine(video_id);
+                    }else if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == true)
+                    {
+
+                        
+                        Console.WriteLine("Waiting to finish video.");
+                        database.FetchLastVideoData();
+
+                        Thread.Sleep(5000);
+                        Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
+                        Robot_1_Record_Made = false;
+                        Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, true);
+                    }
+
+                    
+
+
+
+
+
                     // Set Communication Bit. This bit is used to diagnose error on communication
                     // on PLC Side by toggling the status of the variable. If PLC do not receive
                     // the bit status as true for a specific amount of time, then PLC sets an comm
                     // error bit
                     CommunicationWatch.Start();
-                    if (CommunicationWatch.ElapsedMilliseconds > 5000)
+                    if (CommunicationWatch.ElapsedMilliseconds > 2000)
                     { 
                         CommunicationWatch.Stop();
                         CommunicationWatch.Reset();
