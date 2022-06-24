@@ -1,27 +1,33 @@
-const EventTable = (props) => {
-  let editedData = null;
-  if (props.data === null || props.data === undefined) {
-    return;
-  } else {
-    editedData = props.data.map((record, index) => (
-      <tr key={record.history_id.toString()}>
-        {/* <th>{index + 1}</th> */}
-        <th>{record.history_id}</th>
-        <td>{record.robot_id}</td>
-        <td>{record.video_id}</td>
-        <td>
-          {record.history_date_recorded
-            .replace("T", " | ")
-            .replace(".000Z", " ")}
-        </td>
-      </tr>
-    ));
+import { useState, useEffect } from "react";
+
+const EventTable = () => {
+  const [dataFromApi, setDataFromApi] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [fetchingData, setFetchingData] = useState(true);
+
+  async function getData() {
+    await fetch("/api/videos/historydata", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setDataFromApi(data))
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
+  useEffect(() => {
+    getData().then(setLoading(false));
+  }, [fetchingData]);
 
   return (
     <div>
       <h4 className="header-text">Videos History Table</h4>
-      {props.loading ? (
+      {loading ? (
         <div className="d-inline-flex">
           <div className="spinner-border text-dark" role="status"></div>
           <div className="px-1 text-dark">
@@ -35,11 +41,27 @@ const EventTable = (props) => {
               <th>#</th>
               <th>Robot id</th>
               <th>Video id</th>
+              <th>Video Done Playing</th>
               <th>Date | Time</th>
             </tr>
           </thead>
 
-          <tbody>{editedData}</tbody>
+          <tbody>
+            {dataFromApi.map((record, index) => (
+              <tr key={record.history_id.toString()}>
+                {/* <th>{index + 1}</th> */}
+                <th>{record.history_id}</th>
+                <td>{record.robot_id}</td>
+                <td>{record.video_id}</td>
+                <td>{record.video_done_playing}</td>
+                <td>
+                  {record.history_date_recorded
+                    .replace("T", " | ")
+                    .replace(".000Z", " ")}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       )}
     </div>
