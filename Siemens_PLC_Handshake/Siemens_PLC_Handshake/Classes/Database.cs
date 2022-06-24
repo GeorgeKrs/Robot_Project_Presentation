@@ -53,11 +53,13 @@ namespace Siemens_PLC_Handshake.Classes
 
                 DB_Execute_Command(Query);
 
+                Console.WriteLine("Data Recorded ***************************");
                 Console.WriteLine("Robot id: " + robot_id);
                 Console.WriteLine("Video id: " + video_id);
                 Console.WriteLine("Video Done Playing: " + video_done_playing);
                 Console.WriteLine("Recorded Date: " + date_Recorded);
-            
+                Console.WriteLine("Data Recorded ***************************");
+
             }
             catch (Exception ex)
             {
@@ -82,9 +84,9 @@ namespace Siemens_PLC_Handshake.Classes
             DB_Execute_Command(Query);
         }
 
-        public void FetchLastVideoData()
+        public int FetchLastVideoData()
         {
-
+            int queryResult = 100;
             string Query = "SELECT * FROM robot_project_provik_presantation.video_history ORDER BY history_id DESC LIMIT 1";
 
             MySqlConnection MyConn = new MySqlConnection(DB_Connection);
@@ -95,10 +97,13 @@ namespace Siemens_PLC_Handshake.Classes
 
             MyReader = MyCommand.ExecuteReader();
 
-            while (MyReader.Read())
-            {
-          
+            while (MyReader.Read()) { 
+                queryResult = MyReader.GetInt16("video_done_playing");
             }
+
+            MyConn.Close();
+
+            return queryResult;
         }
     }
 }

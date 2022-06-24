@@ -20,6 +20,7 @@ namespace Siemens_PLC_Handshake
             //Watches for operations
             var EventWatch = new System.Diagnostics.Stopwatch();
             var CommunicationWatch = new System.Diagnostics.Stopwatch();
+            var videoIsPlayingWatch = new System.Diagnostics.Stopwatch();   
             //End of watches for operations
 
             var PC_To_PLC_Request_Connection = new Classes.Bit_Info("DB1.DBX0.0", false);
@@ -135,8 +136,8 @@ namespace Siemens_PLC_Handshake
 
                     }
 
-                    EventWatch.Start();
-                    if (EventWatch.ElapsedMilliseconds > 2000)
+                     EventWatch.Start();
+                    if (EventWatch.ElapsedMilliseconds > 2500)
                     {
                         Console.WriteLine("PC Connected and Listening on IP: 192.168.10.10");
                         Console.WriteLine("----------------------------------------------------------------------------------");
@@ -145,6 +146,9 @@ namespace Siemens_PLC_Handshake
                         EventWatch.Reset();
                     }
 
+
+
+                    videoIsPlayingWatch.Start();
 
 
                     PLC_To_PC_Ready_To_Play_Video_Robot_1.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Ready_To_Play_Video_Robot_1.Address);
@@ -160,24 +164,32 @@ namespace Siemens_PLC_Handshake
                         PC_To_PLC_Video_Done_Playing_Robot_1.Status = false;
                         database.AddVideo_OnDatabase(video_id, statusInformation);
 
-                        Console.WriteLine(video_id);
                     }else if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == true)
                     {
 
-                        
-                        Console.WriteLine("Waiting to finish video.");
-                        database.FetchLastVideoData();
+                   
+                        int videoDonePlaying = database.FetchLastVideoData();
 
-                        Thread.Sleep(5000);
-                        Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
-                        Robot_1_Record_Made = false;
-                        Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, true);
+                        if (videoDonePlaying == 1)
+                        {
+                            Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
+                            Robot_1_Record_Made = false;
+                            Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, true);
+                        }
+
+                        //set a watch for playing video on robot 1 msg
+                       
+                        if (videoIsPlayingWatch.ElapsedMilliseconds > 2700)
+                        {
+                            Console.WriteLine("Video on Robot 1 is playing, Waiting to finish.");
+                            
+
+                            videoIsPlayingWatch.Stop();
+                            videoIsPlayingWatch.Reset();
+                        }
+                        //set a watch for playing video on robot 1 msg
+
                     }
-
-                    
-
-
-
 
 
                     // Set Communication Bit. This bit is used to diagnose error on communication
