@@ -22,14 +22,14 @@ const EventTable = () => {
 
   useEffect(() => {
     getData().then(setLoading(false));
-  }, [fetchingData]);
+  }, [fetchingData, setFetchingData]);
 
   return (
     <div>
       <h4 className="header-text">Videos History Table</h4>
       {loading ? (
         <div className="d-inline-flex">
-          <div className="spinner-border text-dark" role="status"></div>
+          <div className="spinner-border text-dark"></div>
           <div className="px-1 text-dark">
             <b>Fetching history video data.</b>
           </div>

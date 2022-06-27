@@ -1,21 +1,28 @@
 import { useState, useEffect, useRef } from "react";
-
-//video imports
-import video_id_10 from "../../assets/Videos/Robot_1/video_id_10.mp4";
-import video_id_20 from "../../assets/Videos/Robot_1/video_id_20.mp4";
-import video_id_30 from "../../assets/Videos/Robot_1/video_id_30.mp4";
+import { Videos_Robot_1 } from "../../constants/videosArray";
+import { useNavigate } from "react-router";
 
 const Robot_1 = () => {
-  const [fetchingData, setFetchingData] = useState(true);
-  const [videoIsPlaying, setVideoIsPlaying] = useState(false);
-  const [dataFromApi, setDataFromApi] = useState([]);
+  const [fetchData, setFetchData] = useState(true);
 
-  const videosArray = [video_id_10, video_id_20, video_id_30];
+  const [dataFromApi, setDataFromApi] = useState([
+    {
+      history_id: 0,
+      robot_id: 0,
+      video_id: 0,
+      video_done_playing: 1,
+      history_date_recorded: "",
+    },
+  ]);
+
+  const history = useNavigate();
+
+  const [IndexOfVideoToPlay, setIndexOfVideoToPlay] = useState(0);
 
   const videoElement = useRef("Video_Div");
-  console.log(videosArray);
+
   async function getData() {
-    await fetch("http://127.0.0.1:3001/api/videos/fetchLast_Robot_1", {
+    await fetch(`http://127.0.0.1:3001/api/videos/fetchLast/robot_id=${"1"}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -24,32 +31,42 @@ const Robot_1 = () => {
     })
       .then((res) => res.json())
       .then((data) => setDataFromApi(data))
-      .then(() => console.log(dataFromApi));
-    // .then(
-    //   () =>
-    //     dataFromApi[0].video_done_playing === 0 && videoElement.current.play()
-    // );
+      .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1))
+      .then(() => videoElement.current.pause());
   }
 
   async function videoFinished() {
-    // const id = dataFromApi[0].history_id;
-    // await fetch("/api/videos/updateVideo/Robot_1", {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ id: id }),
-    // })
-    //   .then((res) => res.json())
-    //   .then(() => console.log("VIDEO UPDATED"));
+    await fetch(
+      `http://127.0.0.1:3001/api/videos/fetchLast/history_id=${dataFromApi[0].history_id}`,
+      {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then(() => videoElement.current.pause())
+      .then(() => history(0));
   }
 
   useEffect(() => {
-    if (fetchingData) {
-      getData().then(() => setFetchingData(false));
+    getData();
+
+    if (dataFromApi[0].video_done_playing === 0) {
+      setTimeout(function () {
+        videoElement.current.load();
+        videoElement.current.play();
+      }, 150);
     }
-  }, [dataFromApi]);
+
+    setTimeout(function () {
+      if (videoElement.current.currentTime < 2) {
+        console.log("fetch inside use effect");
+        setIndexOfVideoToPlay(Math.random() * 100);
+      }
+    }, 3000);
+  }, [IndexOfVideoToPlay]);
 
   return (
     <div className="p-5 d-flex justify-content-center bg-dark">
@@ -61,7 +78,7 @@ const Robot_1 = () => {
         autoPlay={false}
         onEnded={videoFinished}
       >
-        <source src={video_id_30} type="video/mp4" />
+        <source src={Videos_Robot_1[IndexOfVideoToPlay]} type="video/mp4" />
       </video>
     </div>
   );

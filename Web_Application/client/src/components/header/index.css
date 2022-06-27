@@ -1,7 +1,15 @@
 .header-image {
   max-width: 300px;
-  max-height: 300px;
+  max-height: 87px;
   background-color: var(--bs-light);
   border-radius: 4px;
   padding: 5px;
+}
+
+.font-custom {
+}
+
+.font-custom:hover {
+  cursor: pointer;
+  color: var(--bs-indigo) !important;
 }

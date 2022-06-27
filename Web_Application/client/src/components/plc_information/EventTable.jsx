@@ -29,7 +29,7 @@ const EventTable = () => {
       <h4 className="header-text">PLC Status Table</h4>
       {loading ? (
         <div className="d-inline-flex">
-          <div className="spinner-border text-dark" role="status"></div>
+          <div className="spinner-border text-dark"></div>
           <div className="px-1 text-dark">
             <b>Fetching PLC status data.</b>
           </div>

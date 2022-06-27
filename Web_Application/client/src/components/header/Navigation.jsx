@@ -15,26 +15,29 @@ const Navigation = () => {
   return (
     <div className="my-auto d-inline-flex">
       <FontAwesomeIcon
-        className={
-          activeTab === 1 ? "px-2 font-awesome-active" : "px-2 font-awesome"
-        }
+        // className={
+        //   activeTab === 1 ? "px-2 font-awesome-active" : "px-2 font-awesome"
+        // }
+        className="px-2 text-dark font-custom"
         size="2x"
         icon={faDatabase}
         onClick={() => handleRedirect("/", 1)}
       />
 
       <FontAwesomeIcon
-        className={
-          activeTab === 2 ? "px-2 font-awesome-active" : "px-2 font-awesome"
-        }
+        // className={
+        //   activeTab === 2 ? "px-2 font-awesome-active" : "px-2 font-awesome"
+        // }
+        className="px-2 text-primary font-custom"
         size="2x"
         icon={faRobot}
         onClick={() => handleRedirect("/robot1", 2)}
       />
       <FontAwesomeIcon
-        className={
-          activeTab === 3 ? "px-2 font-awesome-active" : "px-2 font-awesome"
-        }
+        // className={
+        //   activeTab === 3 ? "px-2 font-awesome-active" : "px-2 font-awesome"
+        // }
+        className="px-1 text-warning font-custom"
         size="2x"
         icon={faRobot}
         onClick={() => handleRedirect("/robot2", 3)}
