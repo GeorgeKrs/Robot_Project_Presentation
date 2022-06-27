@@ -6,7 +6,7 @@ const EventTable = () => {
   const [fetchingData, setFetchingData] = useState(true);
 
   async function getData() {
-    await fetch("/api/plc/events", {
+    await fetch("http://127.0.0.1:3001/api/plc/events", {
       method: "GET",
       headers: {
         Accept: "application/json",

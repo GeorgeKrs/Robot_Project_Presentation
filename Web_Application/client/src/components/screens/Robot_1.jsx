@@ -15,7 +15,7 @@ const Robot_1 = () => {
   const videoElement = useRef("Video_Div");
   console.log(videosArray);
   async function getData() {
-    await fetch("/api/videos/fetchLast_Robot_1", {
+    await fetch("http://127.0.0.1:3001/api/videos/fetchLast_Robot_1", {
       method: "GET",
       headers: {
         Accept: "application/json",

@@ -1,5 +1,6 @@
 const express = require("express");
 const database = require("./database/configuration");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const cors = require("cors");
 // const corsOptions = {
@@ -25,7 +26,7 @@ database.configuration.connect(function (err) {
 //connect to db
 
 //plc apis
-app.get("/api/plc/events", (req, res) => {
+app.get("http://127.0.0.1:3001/api/plc/events", (req, res) => {
   const sql = database.mysql2.format(
     "SELECT * FROM event_logger ORDER BY event_id DESC;"
   );
@@ -40,7 +41,7 @@ app.get("/api/plc/events", (req, res) => {
 //videos apis
 
 //POST METHOD APIS
-app.post("/api/videos/updateVideo/Robot_1"),
+app.post("http://127.0.0.1:3001/api/videos/updateVideo/Robot_1"),
   (req, res) => {
     console.log(req.body);
   };
@@ -48,7 +49,7 @@ app.post("/api/videos/updateVideo/Robot_1"),
 //POST METHOD APIS
 
 //GET METHOD APIS
-app.get("/api/videos/historydata", (req, res) => {
+app.get("http://127.0.0.1:3001/api/videos/historydata", (req, res) => {
   const sql = database.mysql2.format(
     "SELECT * FROM video_history ORDER BY history_id DESC;"
   );
@@ -59,7 +60,7 @@ app.get("/api/videos/historydata", (req, res) => {
   });
 });
 
-app.get("/api/videos/fetchLast_Robot_1", (req, res) => {
+app.get("http://127.0.0.1:3001/api/videos/fetchLast_Robot_1", (req, res) => {
   const robot_id = [1];
   const sql = database.mysql2.format(
     "SELECT * FROM video_history WHERE robot_id=? ORDER BY history_id DESC LIMIT 1;"
@@ -71,7 +72,7 @@ app.get("/api/videos/fetchLast_Robot_1", (req, res) => {
   });
 });
 
-app.get("/api/videos/fetchLast_Robot_2", (req, res) => {
+app.get("http://127.0.0.1:3001/api/videos/fetchLast_Robot_2", (req, res) => {
   const robot_id = [2];
   const sql = database.mysql2.format(
     "SELECT * FROM video_history WHERE robot_id=? ORDER BY history_id DESC LIMIT 1;"

@@ -6,7 +6,7 @@ const EventTable = () => {
   const [fetchingData, setFetchingData] = useState(true);
 
   async function getData() {
-    await fetch("/api/videos/historydata", {
+    await fetch("http://127.0.0.1:3001/api/videos/historydata", {
       method: "GET",
       headers: {
         Accept: "application/json",
