@@ -45,9 +45,7 @@ const Robot_1 = () => {
           "Content-Type": "application/json",
         },
       }
-    )
-      .then(() => videoElement.current.pause())
-      .then(() => history(0));
+    ).then((window.location.href = window.location.href));
   }
 
   useEffect(() => {

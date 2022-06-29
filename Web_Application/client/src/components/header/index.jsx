@@ -22,6 +22,7 @@ const Header = () => {
         </div>
         <Navigation />
       </div>
+      <hr />
     </div>
   );
 };
