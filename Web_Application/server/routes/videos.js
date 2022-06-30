@@ -14,6 +14,15 @@ router.get("/historydata", (req, res) => {
   });
 });
 
+router.get("/fetchAll", (req, res) => {
+  const sql = database.mysql2.format("SELECT * FROM video_history");
+
+  database.configuration.query(sql, function (err, data, fields) {
+    if (err) throw err;
+    res.send(data);
+  });
+});
+
 router.put("/fetchLast/:history_id", (req, res) => {
   let history_id = req.params.history_id.replace("history_id=", "");
   history_id = [1, parseInt(history_id)];

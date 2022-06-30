@@ -16,9 +16,9 @@ const Header = () => {
               className="header-image"
             />
           </div>
-          <div className="px-2">
+          {/* <div className="px-2">
             <img src={greekFlag} alt={"Greek Flag"} className="header-image" />
-          </div>
+          </div> */}
         </div>
         <Navigation />
       </div>

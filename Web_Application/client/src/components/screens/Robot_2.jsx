@@ -22,7 +22,7 @@ const Robot_2 = () => {
   const videoElement = useRef("Video_Div");
 
   async function getData() {
-    await fetch(`http://127.0.0.1:3001/api/videos/fetchLast/robot_id=${"2"}`, {
+    await fetch(`http://127.0.0.1:3001/api/videos/fetchLast/robot_id=${2}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -31,8 +31,8 @@ const Robot_2 = () => {
     })
       .then((res) => res.json())
       .then((data) => setDataFromApi(data))
-      .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1))
-      .then(() => videoElement.current.pause());
+      .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1));
+    // .then(() => videoElement.current.pause());
   }
 
   async function videoFinished() {

@@ -32,7 +32,7 @@ namespace Siemens_PLC_Handshake.Classes
 
         public void AddVideo_OnDatabase(int video_id, Status_Information status_information)
         {
-            int robot_id = 0;
+            int robot_id;
             int video_done_playing = 0;    
 
             string date_Recorded = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -84,13 +84,14 @@ namespace Siemens_PLC_Handshake.Classes
             DB_Execute_Command(Query);
         }
 
-        public int FetchLastVideoData()
+        public int FetchLastVideoData(int robot_id)
         {
             int queryResult = 100;
-            string Query = "SELECT * FROM robot_project_provik_presantation.video_history ORDER BY history_id DESC LIMIT 1";
-
             MySqlConnection MyConn = new MySqlConnection(DB_Connection);
-            MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+
+            MySqlCommand MyCommand = new MySqlCommand("SELECT * FROM robot_project_provik_presantation.video_history WHERE robot_id=?robot_id ORDER BY history_id DESC  LIMIT 1", MyConn);
+            MyCommand.Parameters.Add(new MySqlParameter("robot_id", robot_id));
+            
             MySqlDataReader MyReader;
 
             MyConn.Open();
@@ -99,6 +100,7 @@ namespace Siemens_PLC_Handshake.Classes
 
             while (MyReader.Read()) { 
                 queryResult = MyReader.GetInt16("video_done_playing");
+                Console.WriteLine("queryResult: " + queryResult);
             }
 
             MyConn.Close();

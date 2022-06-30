@@ -20,7 +20,8 @@ namespace Siemens_PLC_Handshake
             //Watches for operations
             var EventWatch = new System.Diagnostics.Stopwatch();
             var CommunicationWatch = new System.Diagnostics.Stopwatch();
-            var videoIsPlayingWatch = new System.Diagnostics.Stopwatch();   
+            var videoIsPlaying_Robot_1_Watch = new System.Diagnostics.Stopwatch();
+            var videoIsPlaying_Robot_2_Watch = new System.Diagnostics.Stopwatch();
             //End of watches for operations
 
             var PC_To_PLC_Request_Connection = new Classes.Bit_Info("DB1.DBX0.0", false);
@@ -34,13 +35,14 @@ namespace Siemens_PLC_Handshake
             var PC_To_PLC_Video_Playing_Robot_1 = new Classes.Bit_Info("DB1.DBX0.7", false);
             var PC_To_PLC_Video_Done_Playing_Robot_1 = new Classes.Bit_Info("DB1.DBX1.0", false);
 
+            var PLC_To_PC_Ready_To_Play_Video_Robot_2 = new Classes.Bit_Info("DB1.DBX82.0", false);
+            var Robot_2_Record_Made = false;
             var PC_To_PLC_Video_Playing_Robot_2 = new Classes.Bit_Info("DB1.DBX1.1", false);
             var PC_To_PLC_Video_Done_Playing_Robot_2 = new Classes.Bit_Info("DB1.DBX1.2", false);
 
             bool PC_Connection_Lost = false;
 
-
-
+//*******************************************************************************************************************************//
             //Open PLC Connection
             Plc_Siemens.Open();
             Console.WriteLine("Initialize Connection...");
@@ -54,6 +56,9 @@ namespace Siemens_PLC_Handshake
             Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
             Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, false);
 
+            Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_2.Address, false);
+            Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_2.Address, false);
+
             statusInformation.Connection_Success_Recorded = false;
 
             //Starting Connection Process
@@ -64,7 +69,8 @@ namespace Siemens_PLC_Handshake
             Console.WriteLine("Waiting for PLC Response... (Retrying every 500msec)");
             Console.WriteLine("-----------------------------------------------------------------------------------");
 
-
+//*******************************************************************************************************************************//
+            //START OF LOOP
             do
             {
                 if (PC_Connection_Lost && PLC_To_PC_Response_Connection.Status == false) 
@@ -146,15 +152,15 @@ namespace Siemens_PLC_Handshake
                         EventWatch.Reset();
                     }
 
-
-
-                    videoIsPlayingWatch.Start();
+//*******************************************************************************************************************************//
+                    //ROBOT 1 FUNCTIONALITY
+                    videoIsPlaying_Robot_1_Watch.Start();
 
 
                     PLC_To_PC_Ready_To_Play_Video_Robot_1.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Ready_To_Play_Video_Robot_1.Address);
-                    var video_id = (ushort)Plc_Siemens.Read("DB1.DBW2.0");
+                    var video_id_Robot_1 = (ushort)Plc_Siemens.Read("DB1.DBW2.0");
 
-                    if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == false && video_id != 0)
+                    if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == false && video_id_Robot_1 != 0)
                     {
                         Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_1.Address, false);
 
@@ -162,15 +168,15 @@ namespace Siemens_PLC_Handshake
 
                         Robot_1_Record_Made = true;
                         PC_To_PLC_Video_Done_Playing_Robot_1.Status = false;
-                        database.AddVideo_OnDatabase(video_id, statusInformation);
+                        database.AddVideo_OnDatabase(video_id_Robot_1, statusInformation);
 
                     }else if (PLC_To_PC_Ready_To_Play_Video_Robot_1.Status && Robot_1_Record_Made == true)
                     {
 
                    
-                        int videoDonePlaying = database.FetchLastVideoData();
+                        int videoDonePlaying_Robot_1 = database.FetchLastVideoData(1);
 
-                        if (videoDonePlaying == 1)
+                        if (videoDonePlaying_Robot_1 == 1)
                         {
                             Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_1.Address, false);
                             Robot_1_Record_Made = false;
@@ -179,18 +185,66 @@ namespace Siemens_PLC_Handshake
 
                         //set a watch for playing video on robot 1 msg
                        
-                        if (videoIsPlayingWatch.ElapsedMilliseconds > 2700)
+                        if (videoIsPlaying_Robot_1_Watch.ElapsedMilliseconds > 2700)
                         {
                             Console.WriteLine("Video on Robot 1 is playing, Waiting to finish.");
-                            
 
-                            videoIsPlayingWatch.Stop();
-                            videoIsPlayingWatch.Reset();
+
+                            videoIsPlaying_Robot_1_Watch.Stop();
+                            videoIsPlaying_Robot_1_Watch.Reset();
                         }
                         //set a watch for playing video on robot 1 msg
+                    }
+                    //END ROBOT 1 FUNCTIONALITY
+
+//*******************************************************************************************************************************//
+
+                    //ROBOT 2 FUNCTIONALITY
+                    videoIsPlaying_Robot_2_Watch.Start();
+
+
+                    PLC_To_PC_Ready_To_Play_Video_Robot_2.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Ready_To_Play_Video_Robot_2.Address);
+                    var video_id_Robot_2 = (ushort)Plc_Siemens.Read("DB1.DBW42.0");
+
+                    if (PLC_To_PC_Ready_To_Play_Video_Robot_2.Status && Robot_2_Record_Made == false && video_id_Robot_2 != 0)
+                    {
+                        Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_2.Address, false);
+
+                        Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_2.Address, true);
+
+                        Robot_2_Record_Made = true;
+                        PC_To_PLC_Video_Done_Playing_Robot_2.Status = false;
+                        database.AddVideo_OnDatabase(video_id_Robot_2, statusInformation);
 
                     }
+                    else if (PLC_To_PC_Ready_To_Play_Video_Robot_2.Status && Robot_2_Record_Made == true)
+                    {
 
+
+                        int videoDonePlaying_Robot_2 = database.FetchLastVideoData(2);
+
+                        if (videoDonePlaying_Robot_2 == 1)
+                        {
+                            Plc_Siemens.Write(PC_To_PLC_Video_Playing_Robot_2.Address, false);
+                            Robot_2_Record_Made = false;
+                            Plc_Siemens.Write(PC_To_PLC_Video_Done_Playing_Robot_2.Address, true);
+                        }
+
+                        //set a watch for playing video on robot 2 msg
+
+                        if (videoIsPlaying_Robot_2_Watch.ElapsedMilliseconds > 2700)
+                        {
+                            Console.WriteLine("Video on Robot 2 is playing, Waiting to finish.");
+
+
+                            videoIsPlaying_Robot_2_Watch.Stop();
+                            videoIsPlaying_Robot_2_Watch.Reset();
+                        }
+                        //end of set a watch for playing video on robot 1 msg
+                    }
+                    //END ROBOT 2 FUNCTIONALITY
+
+                    //*******************************************************************************************************************************//
 
                     // Set Communication Bit. This bit is used to diagnose error on communication
                     // on PLC Side by toggling the status of the variable. If PLC do not receive

@@ -22,7 +22,7 @@ const Robot_1 = () => {
   const videoElement = useRef("Video_Div");
 
   async function getData() {
-    await fetch(`http://127.0.0.1:3001/api/videos/fetchLast/robot_id=${"1"}`, {
+    await fetch(`http://127.0.0.1:3001/api/videos/fetchLast/robot_id=${1}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
