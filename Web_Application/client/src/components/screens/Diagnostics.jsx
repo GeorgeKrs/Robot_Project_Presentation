@@ -6,8 +6,9 @@ const Diagnostics = () => {
   return (
     <div style={{ overflowX: "hidden" }}>
       <div className="mx-2 row">
-        <div className="col-lg-7 col-sm-8">
+        <div className="px-3 col-lg-7 col-sm-8">
           <Videos />
+          <hr className="mt-4" />
           <PLC />
         </div>
         <div className="col-lg-5 col-sm-4">

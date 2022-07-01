@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Videos_Robot_1 } from "../../constants/videosArray";
 import { useNavigate } from "react-router";
+import Card from "../general/Card";
+import CompanyInformation from "./CompanyInformation";
 
 const Robot_2 = () => {
   const [fetchData, setFetchData] = useState(true);
@@ -32,7 +34,6 @@ const Robot_2 = () => {
       .then((res) => res.json())
       .then((data) => setDataFromApi(data))
       .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1));
-    // .then(() => videoElement.current.pause());
   }
 
   async function videoFinished() {
@@ -59,7 +60,10 @@ const Robot_2 = () => {
     }
 
     setTimeout(function () {
-      if (videoElement.current.currentTime < 2) {
+      if (
+        videoElement.current.currentTime < 0.25 ||
+        videoElement.current.currentTime === undefined
+      ) {
         console.log("fetch inside use effect");
         setIndexOfVideoToPlay(Math.random() * 100);
       }
@@ -68,16 +72,28 @@ const Robot_2 = () => {
 
   return (
     <div className="p-5 d-flex justify-content-center bg-dark">
-      <video
-        className="video-div"
-        style={{ width: "1000px" }}
-        ref={videoElement}
-        controls
-        autoPlay={false}
-        onEnded={videoFinished}
-      >
-        <source src={Videos_Robot_1[IndexOfVideoToPlay]} type="video/mp4" />
-      </video>
+      {dataFromApi[0].video_done_playing !== 1 ? (
+        <video
+          className="video-div"
+          ref={videoElement}
+          controls
+          autoPlay={false}
+          onEnded={videoFinished}
+        >
+          <source src={Videos_Robot_1[IndexOfVideoToPlay]} type="video/mp4" />
+        </video>
+      ) : (
+        <div className="waiting-div">
+          <Card
+            header={"Company Information:"}
+            borderColor={"dark"}
+            headerBackgroundColor={"primary"}
+            headerTextColor={"white"}
+          >
+            <CompanyInformation />
+          </Card>
+        </div>
+      )}
     </div>
   );
 };

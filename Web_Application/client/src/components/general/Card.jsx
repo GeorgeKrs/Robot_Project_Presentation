@@ -4,7 +4,7 @@ const Card = (props) => {
       <div
         className={`bg-${props.headerBackgroundColor} text-${props.headerTextColor} card-header`}
       >
-        {props.header}
+        <b> {props.header}</b>
       </div>
       <ul className="list-group">{props.children}</ul>
     </div>

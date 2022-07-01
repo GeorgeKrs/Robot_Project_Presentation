@@ -35,6 +35,13 @@ code {
 .video-div {
   border: 3px solid var(--bs-light);
   border-radius: 4px;
+  height: 600px;
+  width: 1000px;
+}
+
+.waiting-div {
+  height: 600px;
+  width: 1000px;
 }
 
 .list-group-item {
