@@ -154,14 +154,7 @@ const Metrics = () => {
                     position="insideTopRight"
                   />
                 </XAxis>
-                <YAxis>
-                  {/* <Label
-                    value="Total Times Played"
-                    offset={-15}
-                    angle={-90}
-                    position="left"
-                  /> */}
-                </YAxis>
+                <YAxis />
                 <Tooltip />
                 <Legend />
                 <Bar
@@ -198,14 +191,7 @@ const Metrics = () => {
                     position="insideTopRight"
                   />
                 </XAxis>
-                <YAxis>
-                  {/* <Label
-                    value="Total Times Played"
-                    offset={-15}
-                    angle={-90}
-                    position="left"
-                  /> */}
-                </YAxis>
+                <YAxis />
                 <Tooltip />
                 <Legend />
                 <Bar
