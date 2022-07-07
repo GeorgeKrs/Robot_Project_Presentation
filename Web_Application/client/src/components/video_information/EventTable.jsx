@@ -49,8 +49,7 @@ const EventTable = () => {
           <tbody>
             {dataFromApi.map((record, index) => (
               <tr key={record.history_id.toString()}>
-                {/* <th>{index + 1}</th> */}
-                <th>{record.history_id}</th>
+                <th>{index + 1}</th>
                 <td>{record.robot_id}</td>
                 <td>{record.video_id}</td>
                 <td>{record.video_done_playing}</td>
