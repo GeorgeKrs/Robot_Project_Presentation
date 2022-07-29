@@ -879,23 +879,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GeorgeKrs\\.nuget\\packages\\": {},
+    "C:\\Users\\Provik\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GeorgeKrs\\Desktop\\Robot_Presentation_Project\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake.csproj",
+      "projectUniqueName": "C:\\Users\\Provik\\Desktop\\Robot_Project_Presentation\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake.csproj",
       "projectName": "Siemens_PLC_Handshake",
-      "projectPath": "C:\\Users\\GeorgeKrs\\Desktop\\Robot_Presentation_Project\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake.csproj",
-      "packagesPath": "C:\\Users\\GeorgeKrs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GeorgeKrs\\Desktop\\Robot_Presentation_Project\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\obj\\",
+      "projectPath": "C:\\Users\\Provik\\Desktop\\Robot_Project_Presentation\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake.csproj",
+      "packagesPath": "C:\\Users\\Provik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Provik\\Desktop\\Robot_Project_Presentation\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\GeorgeKrs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Provik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -941,12 +941,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
