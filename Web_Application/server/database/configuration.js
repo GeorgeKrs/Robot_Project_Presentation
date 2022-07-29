@@ -5,7 +5,7 @@ const configuration = mysql2.createConnection({
   user: "root",
   password: "1234",
   database: "robot_project_provik_presantation",
-  port: 3000,
+  port: 3306,
   timezone: "utc",
 });
 
