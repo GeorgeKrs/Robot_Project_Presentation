@@ -25,30 +25,19 @@ export const countVideos = (data) => {
     { video_id: 70, counter: 0 },
     { video_id: 80, counter: 0 },
     { video_id: 90, counter: 0 },
+  
+  ];
+
+  const Robot_2 = [
     { video_id: 100, counter: 0 },
     { video_id: 110, counter: 0 },
     { video_id: 120, counter: 0 },
     { video_id: 130, counter: 0 },
     { video_id: 140, counter: 0 },
     { video_id: 150, counter: 0 },
-  ];
-
-  const Robot_2 = [
     { video_id: 160, counter: 0 },
     { video_id: 170, counter: 0 },
     { video_id: 180, counter: 0 },
-    { video_id: 190, counter: 0 },
-    { video_id: 200, counter: 0 },
-    { video_id: 210, counter: 0 },
-    { video_id: 220, counter: 0 },
-    { video_id: 230, counter: 0 },
-    { video_id: 240, counter: 0 },
-    { video_id: 250, counter: 0 },
-    { video_id: 260, counter: 0 },
-    { video_id: 270, counter: 0 },
-    { video_id: 280, counter: 0 },
-    { video_id: 290, counter: 0 },
-    { video_id: 300, counter: 0 },
   ];
 
   const counters = [Robot_1, Robot_2];
