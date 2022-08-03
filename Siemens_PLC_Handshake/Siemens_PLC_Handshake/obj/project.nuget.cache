@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/4JffXXZwDLtwrtovC5VCjDY4cVPHCzBKewLahqhR7mAAk9hoK7FRbs92nSDnUnuvX/QfnxvCv4jSvdenJ08Vw==",
+  "dgSpecHash": "fAz1YW1NTYCc0nqaIRZwdvSTCswIX2VCRUv1wVbBUXcQ/WyKb/X95v3NLYg/4+xRKWQir6cHGvKMaLd6M/H+UA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Provik\\Desktop\\Robot_Project_Presentation\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake\\Siemens_PLC_Handshake.csproj",
   "expectedPackageFiles": [
@@ -23,11 +23,7 @@
     "C:\\Users\\Provik\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\Provik\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Provik\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "C:\\Users\\Provik\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Provik\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
-    "C:\\Users\\Provik\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Provik\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Provik\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\Provik\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

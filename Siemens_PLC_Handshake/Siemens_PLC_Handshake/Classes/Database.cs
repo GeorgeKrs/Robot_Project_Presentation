@@ -11,7 +11,7 @@ namespace Siemens_PLC_Handshake.Classes
 {
     public class Database
     {
-        private string DB_Connection = "datasource=localhost;port=3000;username=root;password=1234";
+        private string DB_Connection = "datasource=localhost;port=3306;username=root;password=1234";
 
         private void DB_Execute_Command(string Query)
         {
