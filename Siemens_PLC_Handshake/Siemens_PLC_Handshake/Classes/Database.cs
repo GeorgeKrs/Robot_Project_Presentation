@@ -100,7 +100,6 @@ namespace Siemens_PLC_Handshake.Classes
 
             while (MyReader.Read()) { 
                 queryResult = MyReader.GetInt16("video_done_playing");
-                Console.WriteLine("queryResult: " + queryResult);
             }
 
             MyConn.Close();

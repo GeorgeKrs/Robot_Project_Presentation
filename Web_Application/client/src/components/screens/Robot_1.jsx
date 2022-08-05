@@ -5,8 +5,6 @@ import Card from "../general/Card";
 import CompanyInformation from "./CompanyInformation";
 
 const Robot_1 = () => {
-  const [fetchData, setFetchData] = useState(true);
-
   const [dataFromApi, setDataFromApi] = useState([
     {
       history_id: 0,
@@ -17,7 +15,6 @@ const Robot_1 = () => {
     },
   ]);
 
-  const history = useNavigate();
 
   const [IndexOfVideoToPlay, setIndexOfVideoToPlay] = useState(0);
 

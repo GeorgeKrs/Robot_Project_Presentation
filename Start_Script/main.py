@@ -12,8 +12,9 @@ def client():
     os.system("npm start")
 
 def handshake(): 
-    handshake_path = r"C:\Users\Provik\Desktop\Robot_Project_Presentation\Siemens_PLC_Handshake\Siemens_PLC_Handshake.sln"
-    os.chdir(handshake_path)
+    handshake_path = r"C:\Users\Provik\Desktop\Robot_Project_Presentation\Siemens_PLC_Handshake\Siemens_PLC_Handshake"
+    # os.chdir(handshake_path)
+    # os.system("Program.cs")
 
 
 

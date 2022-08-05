@@ -89,6 +89,8 @@ namespace Siemens_PLC_Handshake
                     EventWatch.Start();
                     PLC_To_PC_Response_Connection.Status = (bool)Plc_Siemens.Read(PLC_To_PC_Response_Connection.Address);
 
+                    Plc_Siemens.Write(PC_To_PLC_Request_Connection.Address, true);
+
                     statusInformation.Plc_Connection_Error_Counter++;
 
                     Console.WriteLine("Retry Number: " + statusInformation.Plc_Connection_Error_Counter);

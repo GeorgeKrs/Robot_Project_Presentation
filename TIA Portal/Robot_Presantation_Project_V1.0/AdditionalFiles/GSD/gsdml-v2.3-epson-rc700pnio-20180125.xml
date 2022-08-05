@@ -1,0 +1,1692 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.3.xsd">
+  <ProfileHeader>
+    <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+    <ProfileRevision>1.00</ProfileRevision>
+    <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+    <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>4</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>GSDML</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity VendorID="0x01CA" DeviceID="0x0006">
+      <InfoText TextId="T_ID_DEV_DESCRIPTION" />
+      <VendorName Value="SEIKO EPSON CORPORATION" />
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Family MainFamily="General" ProductFamily="RC700 PROFINET IO Device" />
+    </DeviceFunction>
+    <ApplicationProcess>
+      <!-- ============================================================================================ -->
+      <!--   List of Device Access Points (DAP)                                                         -->
+      <!-- ============================================================================================ -->
+      <DeviceAccessPointList>
+        <DeviceAccessPointItem ID="RC700_PNIO_V1" PhysicalSlots="0..32" ModuleIdentNumber="0xA0000000" MinDeviceInterval="64" ImplementationType="Motorola Coldfire" DNS_CompatibleName="RC700-PROFINET-IO" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" NameOfStationNotTransferable="true" DeviceAccessSupported="true" PNIO_Version="V2.2">
+          <ModuleInfo CategoryRef="CAT_REF_MIGRATION_DAP">
+            <Name TextId="T_ID_RC700_PNIO_DAP1" />
+            <InfoText TextId="T_ID_V1_DEV_DESCRIPTION" />
+            <VendorName Value="SEIKO EPSON CORPORATION" />
+            <OrderNumber Value="RC700-PROFINET-IO" />
+            <HardwareRelease Value="V1.0" />
+            <SoftwareRelease Value="V1.0" />
+          </ModuleInfo>
+          <IOConfigData MaxInputLength="256" MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="0" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="2" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="3" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="4" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="5" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="6" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="7" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="8" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="9" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="10" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="11" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="12" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="13" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="14" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="15" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="16" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="17" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="18" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="19" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="20" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="21" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="22" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="23" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="24" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="25" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="26" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="27" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="28" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="29" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="30" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="31" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="32" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="33" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="34" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="35" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="36" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="37" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="38" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="39" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="40" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="41" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="42" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="43" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="44" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="45" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="46" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="47" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="48" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="49" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="50" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="51" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="52" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="53" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="54" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="55" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="56" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="57" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="58" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="59" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="60" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="61" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="62" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="63" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="64" AllowedInSlots="1..32" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="RC700_PNIO_V1" SubmoduleIdentNumber="0x00000000" Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <ModuleInfo>
+                <Name TextId="T_ID_RC700_PNIO_DAP1" />
+                <InfoText TextId="T_ID_V1_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </DeviceAccessPointItem>
+        <DeviceAccessPointItem ID="RC700_PNIO_V2" PhysicalSlots="0..32" ModuleIdentNumber="0xD0000000" MinDeviceInterval="64" ImplementationType="Motorola Coldfire" DNS_CompatibleName="RC700-PROFINET-IO" ExtendedAddressAssignmentSupported="true" FixedInSlots="0" ObjectUUID_LocalIndex="1" RequiredSchemaVersion="V2.2" ParameterizationSpeedupSupported="false" NameOfStationNotTransferable="true" DeviceAccessSupported="true" PNIO_Version="V2.2">
+          <ModuleInfo>
+            <Name TextId="T_ID_RC700_PNIO_DAP2" />
+            <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+            <VendorName Value="SEIKO EPSON CORPORATION" />
+            <OrderNumber Value="RC700-PROFINET-IO" />
+            <HardwareRelease Value="V1.0" />
+            <SoftwareRelease Value="V1.0" />
+          </ModuleInfo>
+          <SubslotList>
+            <SubslotItem SubslotNumber="32768" TextId="T_ID_SS_INTERFACE" />
+            <SubslotItem SubslotNumber="32769" TextId="T_ID_SS_PORT1" />
+          </SubslotList>
+          <IOConfigData MaxInputLength="256" MaxOutputLength="256" />
+          <UseableModules>
+            <ModuleItemRef ModuleItemTarget="0" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="2" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="3" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="4" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="5" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="6" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="7" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="8" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="9" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="10" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="11" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="12" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="13" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="14" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="15" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="16" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="17" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="18" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="19" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="20" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="21" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="22" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="23" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="24" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="25" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="26" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="27" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="28" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="29" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="30" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="31" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="32" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="33" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="34" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="35" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="36" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="37" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="38" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="39" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="40" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="41" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="42" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="43" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="44" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="45" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="46" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="47" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="48" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="49" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="50" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="51" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="52" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="53" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="54" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="55" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="56" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="57" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="58" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="59" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="60" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="61" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="62" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="63" AllowedInSlots="1..32" />
+            <ModuleItemRef ModuleItemTarget="64" AllowedInSlots="1..32" />
+          </UseableModules>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="RC700_PNIO_V2" SubmoduleIdentNumber="0x00000000" API="0" Writeable_IM_Records="1 2 3 4">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <ModuleInfo>
+                <Name TextId="T_ID_RC700_PNIO_DAP2" />
+                <InfoText TextId="T_ID_V2_DEV_DESCRIPTION" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+          <SystemDefinedSubmoduleList>
+            <InterfaceSubmoduleItem ID="IDS_RC700_PNIO_V2I" SubslotNumber="32768" SubmoduleIdentNumber="0x0001" SupportedRT_Classes="RT_CLASS_1" TextId="T_ID_DAP_INTERFACE_MODULE" DCP_HelloSupported="false" IsochroneModeSupported="false" SupportedMibs="" SupportedProtocols="LLDP">
+              <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0">
+                <TimingProperties SendClock="32 64 128" ReductionRatio="2 4 8 16 32 64 128 256 512" />
+              </ApplicationRelations>
+            </InterfaceSubmoduleItem>
+            <PortSubmoduleItem ID="IDS_RC700_PNIO_V2P" SubslotNumber="32769" SubmoduleIdentNumber="0x0002" MAUType="100BASETXFD" TextId="T_ID_PORT" />
+          </SystemDefinedSubmoduleList>
+        </DeviceAccessPointItem>
+      </DeviceAccessPointList>
+      <ModuleList>
+        <!--Input modules -->
+        <ModuleItem ID="1" ModuleIdentNumber="0x00000001">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN1" />
+            <InfoText TextId="IN1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="1" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN1" />
+                <InfoText TextId="IN1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="2" ModuleIdentNumber="0x00000002">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN2" />
+            <InfoText TextId="IN2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="2" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN2" />
+                <InfoText TextId="IN2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="3" ModuleIdentNumber="0x00000003">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN3" />
+            <InfoText TextId="IN3" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="3" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN3" />
+                <InfoText TextId="IN3" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="4" ModuleIdentNumber="0x00000004">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN4" />
+            <InfoText TextId="IN4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="4" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN4" />
+                <InfoText TextId="IN4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="5" ModuleIdentNumber="0x00000005">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN5" />
+            <InfoText TextId="IN5" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="5" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN5" />
+                <InfoText TextId="IN5" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="6" ModuleIdentNumber="0x00000006">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN6" />
+            <InfoText TextId="IN6" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="6" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN6" />
+                <InfoText TextId="IN6" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+        <ModuleItem ID="7" ModuleIdentNumber="0x00000007">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN7" />
+            <InfoText TextId="IN7" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="7" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN7" />
+                <InfoText TextId="IN7" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="8" ModuleIdentNumber="0x00000008">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN8" />
+            <InfoText TextId="IN8" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="8" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN8" />
+                <InfoText TextId="IN8" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="9" ModuleIdentNumber="0x00000009">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN9" />
+            <InfoText TextId="IN9" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="9" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN9" />
+                <InfoText TextId="IN9" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="10" ModuleIdentNumber="0x0000000A">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN10" />
+            <InfoText TextId="IN10" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN10" />
+                <InfoText TextId="IN10" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="11" ModuleIdentNumber="0x0000000B">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN11" />
+            <InfoText TextId="IN11" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="11" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN11" />
+                <InfoText TextId="IN11" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="12" ModuleIdentNumber="0x0000000C">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN12" />
+            <InfoText TextId="IN12" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN12" />
+                <InfoText TextId="IN12" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="13" ModuleIdentNumber="0x0000000D">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN13" />
+            <InfoText TextId="IN13" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="13" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="13" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN13" />
+                <InfoText TextId="IN13" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="14" ModuleIdentNumber="0x0000000E">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN14" />
+            <InfoText TextId="IN14" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="14" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="14" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN14" />
+                <InfoText TextId="IN14" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="15" ModuleIdentNumber="0x0000000F">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN15" />
+            <InfoText TextId="IN15" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="15" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="15" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN15" />
+                <InfoText TextId="IN15" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="16" ModuleIdentNumber="0x00000010">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN16" />
+            <InfoText TextId="IN16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="16" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="16" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN16" />
+                <InfoText TextId="IN16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="17" ModuleIdentNumber="0x00000011">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN17" />
+            <InfoText TextId="IN17" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="17" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="17" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN17" />
+                <InfoText TextId="IN17" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="18" ModuleIdentNumber="0x00000012">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN18" />
+            <InfoText TextId="IN18" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="18" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="18" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN18" />
+                <InfoText TextId="IN18" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="19" ModuleIdentNumber="0x00000013">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN19" />
+            <InfoText TextId="IN19" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="19" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="19" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN19" />
+                <InfoText TextId="IN19" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="20" ModuleIdentNumber="0x00000014">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN20" />
+            <InfoText TextId="IN20" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="20" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="20" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN20" />
+                <InfoText TextId="IN20" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="21" ModuleIdentNumber="0x00000015">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN21" />
+            <InfoText TextId="IN21" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="21" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="21" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN21" />
+                <InfoText TextId="IN21" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="22" ModuleIdentNumber="0x00000016">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN22" />
+            <InfoText TextId="IN22" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="22" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="22" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN22" />
+                <InfoText TextId="IN22" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="23" ModuleIdentNumber="0x00000017">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN23" />
+            <InfoText TextId="IN23" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="23" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="23" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN23" />
+                <InfoText TextId="IN23" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="24" ModuleIdentNumber="0x00000018">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN24" />
+            <InfoText TextId="IN24" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="24" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="24" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN24" />
+                <InfoText TextId="IN24" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="25" ModuleIdentNumber="0x00000019">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN25" />
+            <InfoText TextId="IN25" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="25" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="25" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN25" />
+                <InfoText TextId="IN25" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="26" ModuleIdentNumber="0x0000001A">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN26" />
+            <InfoText TextId="IN26" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="26" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="26" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN26" />
+                <InfoText TextId="IN26" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="27" ModuleIdentNumber="0x0000001B">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN27" />
+            <InfoText TextId="IN27" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="27" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="27" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN27" />
+                <InfoText TextId="IN27" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="28" ModuleIdentNumber="0x0000001C">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN28" />
+            <InfoText TextId="IN28" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="28" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="28" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN28" />
+                <InfoText TextId="IN28" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="29" ModuleIdentNumber="0x0000001D">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN29" />
+            <InfoText TextId="IN29" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="29" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="29" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN29" />
+                <InfoText TextId="IN29" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="30" ModuleIdentNumber="0x0000001E">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN30" />
+            <InfoText TextId="IN30" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="30" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="30" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN30" />
+                <InfoText TextId="IN30" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="31" ModuleIdentNumber="0x0000001F">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN31" />
+            <InfoText TextId="IN31" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="31" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="31" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN31" />
+                <InfoText TextId="IN31" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="32" ModuleIdentNumber="0x00000020">
+          <ModuleInfo CategoryRef="IN Module">
+            <Name TextId="IN32" />
+            <InfoText TextId="IN32" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="32" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Input Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="32" TextId="INPUT" />
+                </Input>
+              </IOData>
+              <ModuleInfo CategoryRef="IN Module">
+                <Name TextId="IN32" />
+                <InfoText TextId="IN32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <!--Output modules-->
+        <ModuleItem ID="33" ModuleIdentNumber="0x00000100">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT1" />
+            <InfoText TextId="OUT1" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="33" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="1" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT1" />
+                <InfoText TextId="OUT1" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="34" ModuleIdentNumber="0x00000200">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT2" />
+            <InfoText TextId="OUT2" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="34" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="2" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT2" />
+                <InfoText TextId="OUT2" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="35" ModuleIdentNumber="0x00000300">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT3" />
+            <InfoText TextId="OUT3" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="35" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="3" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT3" />
+                <InfoText TextId="OUT3" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="36" ModuleIdentNumber="0x00000400">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT4" />
+            <InfoText TextId="OUT4" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="36" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="4" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT4" />
+                <InfoText TextId="OUT4" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+ 
+       <ModuleItem ID="37" ModuleIdentNumber="0x00000500">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT5" />
+            <InfoText TextId="OUT5" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="37" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="5" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT5" />
+                <InfoText TextId="OUT5" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="38" ModuleIdentNumber="0x00000600">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT6" />
+            <InfoText TextId="OUT6" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="38" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="6" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT6" />
+                <InfoText TextId="OUT6" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="39" ModuleIdentNumber="0x00000700">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT7" />
+            <InfoText TextId="OUT7" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="39" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="7" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT7" />
+                <InfoText TextId="OUT7" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="40" ModuleIdentNumber="0x00000800">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT8" />
+            <InfoText TextId="OUT8" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="40" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="8" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT8" />
+                <InfoText TextId="OUT8" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="41" ModuleIdentNumber="0x00000900">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT9" />
+            <InfoText TextId="OUT9" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="41" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="9" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT9" />
+                <InfoText TextId="OUT9" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="42" ModuleIdentNumber="0x00000A00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT10" />
+            <InfoText TextId="OUT10" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="42" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="10" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT10" />
+                <InfoText TextId="OUT10" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="43" ModuleIdentNumber="0x00000B00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT11" />
+            <InfoText TextId="OUT11" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="43" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="11" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT11" />
+                <InfoText TextId="OUT11" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="44" ModuleIdentNumber="0x00000C00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT12" />
+            <InfoText TextId="OUT12" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="44" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="12" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT12" />
+                <InfoText TextId="OUT12" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="45" ModuleIdentNumber="0x00000D00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT13" />
+            <InfoText TextId="OUT13" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="45" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="13" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT13" />
+                <InfoText TextId="OUT13" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="46" ModuleIdentNumber="0x00000E00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT14" />
+            <InfoText TextId="OUT14" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="46" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="14" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT14" />
+                <InfoText TextId="OUT14" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="47" ModuleIdentNumber="0x00000F00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT15" />
+            <InfoText TextId="OUT15" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="47" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="15" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT15" />
+                <InfoText TextId="OUT15" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="48" ModuleIdentNumber="0x00001000">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT16" />
+            <InfoText TextId="OUT16" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="48" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="16" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT16" />
+                <InfoText TextId="OUT16" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="49" ModuleIdentNumber="0x00001100">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT17" />
+            <InfoText TextId="OUT17" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="49" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="17" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT17" />
+                <InfoText TextId="OUT17" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="50" ModuleIdentNumber="0x00001200">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT18" />
+            <InfoText TextId="OUT18" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="50" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="18" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT18" />
+                <InfoText TextId="OUT18" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="51" ModuleIdentNumber="0x00001300">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT19" />
+            <InfoText TextId="OUT19" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="51" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="19" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT19" />
+                <InfoText TextId="OUT19" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="52" ModuleIdentNumber="0x00001400">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT20" />
+            <InfoText TextId="OUT20" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="52" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="20" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT20" />
+                <InfoText TextId="OUT20" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="53" ModuleIdentNumber="0x00001500">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT21" />
+            <InfoText TextId="OUT21" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="53" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="21" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT21" />
+                <InfoText TextId="OUT21" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="54" ModuleIdentNumber="0x00001600">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT22" />
+            <InfoText TextId="OUT22" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="54" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="22" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT22" />
+                <InfoText TextId="OUT22" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="55" ModuleIdentNumber="0x00001700">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT23" />
+            <InfoText TextId="OUT23" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="55" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="23" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT23" />
+                <InfoText TextId="OUT23" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="56" ModuleIdentNumber="0x00001800">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT24" />
+            <InfoText TextId="OUT24" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="56" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="24" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT24" />
+                <InfoText TextId="OUT24" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="57" ModuleIdentNumber="0x00001900">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT25" />
+            <InfoText TextId="OUT25" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="57" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="25" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT25" />
+                <InfoText TextId="OUT25" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="58" ModuleIdentNumber="0x00001A00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT26" />
+            <InfoText TextId="OUT26" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="58" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="26" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT26" />
+                <InfoText TextId="OUT26" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="59" ModuleIdentNumber="0x00001B00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT27" />
+            <InfoText TextId="OUT27" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="59" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="27" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT27" />
+                <InfoText TextId="OUT27" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="60" ModuleIdentNumber="0x00001C00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT28" />
+            <InfoText TextId="OUT28" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="60" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="28" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT28" />
+                <InfoText TextId="OUT28" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="61" ModuleIdentNumber="0x00001D00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT29" />
+            <InfoText TextId="OUT29" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="61" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="29" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT29" />
+                <InfoText TextId="OUT29" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="62" ModuleIdentNumber="0x00001E00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT30" />
+            <InfoText TextId="OUT30" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="62" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="30" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT30" />
+                <InfoText TextId="OUT30" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="63" ModuleIdentNumber="0x00001F00">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT31" />
+            <InfoText TextId="OUT31" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="63" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="31" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT31" />
+                <InfoText TextId="OUT31" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <ModuleItem ID="64" ModuleIdentNumber="0x00002000">
+          <ModuleInfo CategoryRef="OUT Module">
+            <Name TextId="OUT32" />
+            <InfoText TextId="OUT32" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="64" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1">
+                <Output Consistency="Item consistency">
+                  <DataItem DataType="OctetString" Length="32" TextId="OUTPUT" />
+                </Output>
+              </IOData>
+              <ModuleInfo CategoryRef="OUT Module">
+                <Name TextId="OUT32" />
+                <InfoText TextId="OUT32" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+
+        <!--Other modules -->
+        <ModuleItem ID="0" ModuleIdentNumber="0xB0000000">
+          <ModuleInfo CategoryRef="Other Module">
+            <Name TextId="EmptySlot" />
+            <InfoText TextId="EmptySlot" />
+          </ModuleInfo>
+          <VirtualSubmoduleList>
+            <VirtualSubmoduleItem ID="0" SubmoduleIdentNumber="0x00000000">
+              <IOData IOPS_Length="1" IOCS_Length="1" />
+              <ModuleInfo CategoryRef="Other Module">
+                <Name TextId="EmptySlot" />
+                <InfoText TextId="EmptySlot" />
+              </ModuleInfo>
+            </VirtualSubmoduleItem>
+          </VirtualSubmoduleList>
+        </ModuleItem>
+      </ModuleList>
+      <CategoryList>
+        <CategoryItem ID="IN Module" TextId="IN Module" />
+        <CategoryItem ID="OUT Module" TextId="OUT Module" />
+        <CategoryItem ID="Other Module" TextId="Other Module" />
+        <CategoryItem ID="CAT_REF_MIGRATION_DAP" TextId="T_ID_MIGRATION_DAP" />
+      </CategoryList>
+      <ExternalTextList>
+        <PrimaryLanguage>
+          <!--Identification-->
+          <Text TextId="T_ID_RC700_PNIO_DAP1" Value="RT RC700_PNIO_V1" />
+          <Text TextId="T_ID_RC700_PNIO_DAP2" Value="RT RC700_PNIO_V2" />
+          <Text TextId="T_ID_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device" />
+          <Text TextId="T_ID_V1_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device Access Point V1" />
+          <Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device Access Point V2" />
+          <Text TextId="T_ID_SS_INTERFACE" Value="X1" />
+          <Text TextId="T_ID_SS_PORT1" Value="P1" />
+          <Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface" />
+          <Text TextId="T_ID_PORT" Value="RJ45 100 MBit/s" />
+          <!--Module category-->
+          <Text TextId="IN Module" Value="Input modules" />
+          <Text TextId="OUT Module" Value="Output modules" />
+          <Text TextId="Other Module" Value="Other modules" />
+          <Text TextId="T_ID_MIGRATION_DAP" Value="Migration" />
+          <!--Input modules-->
+          <Text TextId="IN1" Value="Input 1 byte" />
+          <Text TextId="IN2" Value="Input 2 bytes" />
+          <Text TextId="IN3" Value="Input 3 bytes" />
+          <Text TextId="IN4" Value="Input 4 bytes" />
+          <Text TextId="IN5" Value="Input 5 bytes" />
+          <Text TextId="IN6" Value="Input 6 bytes" />
+          <Text TextId="IN7" Value="Input 7 bytes" />
+          <Text TextId="IN8" Value="Input 8 bytes" />
+          <Text TextId="IN9" Value="Input 9 bytes" />
+          <Text TextId="IN10" Value="Input 10 bytes" />
+          <Text TextId="IN11" Value="Input 11 bytes" />
+          <Text TextId="IN12" Value="Input 12 bytes" />
+          <Text TextId="IN13" Value="Input 13 bytes" />
+          <Text TextId="IN14" Value="Input 14 bytes" />
+          <Text TextId="IN15" Value="Input 15 bytes" />
+          <Text TextId="IN16" Value="Input 16 bytes" />
+          <Text TextId="IN17" Value="Input 17 bytes" />
+          <Text TextId="IN18" Value="Input 18 bytes" />
+          <Text TextId="IN19" Value="Input 19 bytes" />
+          <Text TextId="IN20" Value="Input 20 bytes" />
+          <Text TextId="IN21" Value="Input 21 bytes" />
+          <Text TextId="IN22" Value="Input 22 bytes" />
+          <Text TextId="IN23" Value="Input 23 bytes" />
+          <Text TextId="IN24" Value="Input 24 bytes" />
+          <Text TextId="IN25" Value="Input 25 bytes" />
+          <Text TextId="IN26" Value="Input 26 bytes" />
+          <Text TextId="IN27" Value="Input 27 bytes" />
+          <Text TextId="IN28" Value="Input 28 bytes" />
+          <Text TextId="IN29" Value="Input 29 bytes" />
+          <Text TextId="IN30" Value="Input 30 bytes" />
+          <Text TextId="IN31" Value="Input 31 bytes" />
+          <Text TextId="IN32" Value="Input 32 bytes" />
+         <Text TextId="INPUT" Value="Input" />
+          <!--Output modules-->
+          <Text TextId="OUT1" Value="Output 1 byte" />
+          <Text TextId="OUT2" Value="Output 2 bytes" />
+          <Text TextId="OUT3" Value="Output 3 bytes" />
+          <Text TextId="OUT4" Value="Output 4 bytes" />
+          <Text TextId="OUT5" Value="Output 5 bytes" />
+          <Text TextId="OUT6" Value="Output 6 bytes" />
+          <Text TextId="OUT7" Value="Output 7 bytes" />
+          <Text TextId="OUT8" Value="Output 8 bytes" />
+          <Text TextId="OUT9" Value="Output 9 bytes" />
+          <Text TextId="OUT10" Value="Output 10 bytes" />
+          <Text TextId="OUT11" Value="Output 11 bytes" />
+          <Text TextId="OUT12" Value="Output 12 bytes" />
+          <Text TextId="OUT13" Value="Output 13 bytes" />
+          <Text TextId="OUT14" Value="Output 14 bytes" />
+          <Text TextId="OUT15" Value="Output 15 bytes" />
+          <Text TextId="OUT16" Value="Output 16 bytes" />
+          <Text TextId="OUT17" Value="Output 17 bytes" />
+          <Text TextId="OUT18" Value="Output 18 bytes" />
+          <Text TextId="OUT19" Value="Output 19 bytes" />
+          <Text TextId="OUT20" Value="Output 20 bytes" />
+          <Text TextId="OUT21" Value="Output 21 bytes" />
+          <Text TextId="OUT22" Value="Output 22 bytes" />
+          <Text TextId="OUT23" Value="Output 23 bytes" />
+          <Text TextId="OUT24" Value="Output 24 bytes" />
+          <Text TextId="OUT25" Value="Output 25 bytes" />
+          <Text TextId="OUT26" Value="Output 26 bytes" />
+          <Text TextId="OUT27" Value="Output 27 bytes" />
+          <Text TextId="OUT28" Value="Output 28 bytes" />
+          <Text TextId="OUT29" Value="Output 29 bytes" />
+          <Text TextId="OUT30" Value="Output 30 bytes" />
+          <Text TextId="OUT31" Value="Output 31 bytes" />
+          <Text TextId="OUT32" Value="Output 32 bytes" />
+          <Text TextId="OUTPUT" Value="Output" />
+          <!--Other modules-->
+          <Text TextId="EmptySlot" Value="Empty slot" />
+        </PrimaryLanguage>
+	<Language xml:lang="de">
+          <Text TextId="T_ID_RC700_PNIO_DAP1" Value="RT RC700_PNIO_V1" />
+          <Text TextId="T_ID_RC700_PNIO_DAP2" Value="RT RC700_PNIO_V2" />
+          <Text TextId="T_ID_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device" />
+          <Text TextId="T_ID_V1_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device Access Point V1" />
+          <Text TextId="T_ID_V2_DEV_DESCRIPTION" Value="RC700 PROFINET IO Device Access Point V2" />
+          <Text TextId="T_ID_SS_INTERFACE" Value="X1" />
+          <Text TextId="T_ID_SS_PORT1" Value="P1" />
+          <Text TextId="T_ID_DAP_INTERFACE_MODULE" Value="Interface" />
+          <Text TextId="T_ID_PORT" Value="RJ45 100 MBit/s" />
+          <!--Module category-->
+          <Text TextId="IN Module" Value="Eingangsmodule" />
+          <Text TextId="OUT Module" Value="Ausgangsmodule" />
+          <Text TextId="Other Module" Value="Andere Module" />
+          <Text TextId="T_ID_MIGRATION_DAP" Value="Migration" />
+          <!--Input modules-->
+          <Text TextId="IN1" Value="Eingänge 1 Byte" />
+          <Text TextId="IN2" Value="Eingänge 2 Bytes" />
+          <Text TextId="IN3" Value="Eingänge 3 Bytes" />
+          <Text TextId="IN4" Value="Eingänge 4 Bytes" />
+          <Text TextId="IN5" Value="Eingänge 5 Bytes" />
+          <Text TextId="IN6" Value="Eingänge 6 Bytes" />
+          <Text TextId="IN7" Value="Eingänge 7 Bytes" />
+          <Text TextId="IN8" Value="Eingänge 8 Bytes" />
+          <Text TextId="IN9" Value="Eingänge 9 Bytes" />
+          <Text TextId="IN10" Value="Eingänge 10 Bytes" />
+          <Text TextId="IN11" Value="Eingänge 11 Bytes" />
+          <Text TextId="IN12" Value="Eingänge 12 Bytes" />
+          <Text TextId="IN13" Value="Eingänge 13 Bytes" />
+          <Text TextId="IN14" Value="Eingänge 14 Bytes" />
+          <Text TextId="IN15" Value="Eingänge 15 Bytes" />
+          <Text TextId="IN16" Value="Eingänge 16 Bytes" />
+          <Text TextId="IN17" Value="Eingänge 17 Bytes" />
+          <Text TextId="IN18" Value="Eingänge 18 Bytes" />
+          <Text TextId="IN19" Value="Eingänge 19 Bytes" />
+          <Text TextId="IN20" Value="Eingänge 20 Bytes" />
+          <Text TextId="IN21" Value="Eingänge 21 Bytes" />
+          <Text TextId="IN22" Value="Eingänge 22 Bytes" />
+          <Text TextId="IN23" Value="Eingänge 23 Bytes" />
+          <Text TextId="IN24" Value="Eingänge 24 Bytes" />
+          <Text TextId="IN25" Value="Eingänge 25 Bytes" />
+          <Text TextId="IN26" Value="Eingänge 26 Bytes" />
+          <Text TextId="IN27" Value="Eingänge 27 Bytes" />
+          <Text TextId="IN28" Value="Eingänge 28 Bytes" />
+          <Text TextId="IN29" Value="Eingänge 29 Bytes" />
+          <Text TextId="IN30" Value="Eingänge 30 Bytes" />
+          <Text TextId="IN31" Value="Eingänge 31 Bytes" />
+          <Text TextId="IN32" Value="Eingänge 32 Bytes" />
+          <Text TextId="INPUT" Value="Eingänge" />
+          <!--Output modules-->
+          <Text TextId="OUT1" Value="Ausgänge 1 Byte" />
+          <Text TextId="OUT2" Value="Ausgänge 2 Bytes" />
+          <Text TextId="OUT3" Value="Ausgänge 3 Bytes" />
+          <Text TextId="OUT4" Value="Ausgänge 4 Bytes" />
+          <Text TextId="OUT5" Value="Ausgänge 5 Bytes" />
+          <Text TextId="OUT6" Value="Ausgänge 6 Bytes" />
+          <Text TextId="OUT7" Value="Ausgänge 7 Bytes" />
+          <Text TextId="OUT8" Value="Ausgänge 8 Bytes" />
+          <Text TextId="OUT9" Value="Ausgänge 9 Bytes" />
+          <Text TextId="OUT10" Value="Ausgänge 10 Bytes" />
+          <Text TextId="OUT11" Value="Ausgänge 11 Byte" />
+          <Text TextId="OUT12" Value="Ausgänge 12 Bytes" />
+          <Text TextId="OUT13" Value="Ausgänge 13 Bytes" />
+          <Text TextId="OUT14" Value="Ausgänge 14 Bytes" />
+          <Text TextId="OUT15" Value="Ausgänge 15 Bytes" />
+          <Text TextId="OUT16" Value="Ausgänge 16 Bytes" />
+          <Text TextId="OUT17" Value="Ausgänge 17 Bytes" />
+          <Text TextId="OUT18" Value="Ausgänge 18 Bytes" />
+          <Text TextId="OUT19" Value="Ausgänge 19 Bytes" />
+          <Text TextId="OUT20" Value="Ausgänge 20 Bytes" />
+          <Text TextId="OUT21" Value="Ausgänge 21 Byte" />
+          <Text TextId="OUT22" Value="Ausgänge 22 Bytes" />
+          <Text TextId="OUT23" Value="Ausgänge 23 Bytes" />
+          <Text TextId="OUT24" Value="Ausgänge 24 Bytes" />
+          <Text TextId="OUT25" Value="Ausgänge 25 Bytes" />
+          <Text TextId="OUT26" Value="Ausgänge 26 Bytes" />
+          <Text TextId="OUT27" Value="Ausgänge 27 Bytes" />
+          <Text TextId="OUT28" Value="Ausgänge 28 Bytes" />
+          <Text TextId="OUT29" Value="Ausgänge 29 Bytes" />
+          <Text TextId="OUT30" Value="Ausgänge 30 Bytes" />
+          <Text TextId="OUT31" Value="Ausgänge 31 Bytes" />
+          <Text TextId="OUT32" Value="Ausgänge 32 Bytes" />
+          <Text TextId="OUTPUT" Value="Ausgänge" />
+          <!--Other modules-->
+          <Text TextId="EmptySlot" Value="Leerplatz" />	
+	</Language>
+      </ExternalTextList>
+    </ApplicationProcess>
+  </ProfileBody>
+</ISO15745Profile>
