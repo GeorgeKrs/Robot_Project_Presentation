@@ -38,7 +38,7 @@ namespace Siemens_PLC_Handshake.Classes
             string date_Recorded = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             try
             {
-                if (video_id > 0 && video_id < 120) 
+                if (video_id > 0 && video_id < 95) 
                 {
                     robot_id = 1;
                 }else

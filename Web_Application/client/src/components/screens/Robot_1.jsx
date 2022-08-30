@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Videos_Robot_1 } from "../../constants/videosArray";
-import { useNavigate } from "react-router";
+import { Videos_Robot_1 } from "../../constants/videosArray"
 import Card from "../general/Card";
 import CompanyInformation from "./CompanyInformation";
 
@@ -14,7 +13,6 @@ const Robot_1 = () => {
       history_date_recorded: "",
     },
   ]);
-
 
   const [IndexOfVideoToPlay, setIndexOfVideoToPlay] = useState(0);
 
@@ -30,7 +28,7 @@ const Robot_1 = () => {
     })
       .then((res) => res.json())
       .then((data) => setDataFromApi(data))
-      .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1));
+      .then(() => setIndexOfVideoToPlay((dataFromApi[0].video_id / 10) - 1));
   }
 
   async function videoFinished() {
@@ -53,7 +51,7 @@ const Robot_1 = () => {
       setTimeout(function () {
         videoElement.current.load();
         videoElement.current.play();
-      }, 150);
+      }, 400);
     }
 
     setTimeout(function () {
@@ -61,7 +59,7 @@ const Robot_1 = () => {
         videoElement.current.currentTime < 0.25 ||
         videoElement.current.currentTime === undefined
       ) {
-        console.log("fetch inside use effect");
+        console.log("Waiting data from server...");
         setIndexOfVideoToPlay(Math.random() * 100);
       }
     }, 3000);

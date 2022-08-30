@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Videos_Robot_1 } from "../../constants/videosArray";
-import { useNavigate } from "react-router";
+import { Videos_Robot_2 } from "../../constants/videosArray";
 import Card from "../general/Card";
 import CompanyInformation from "./CompanyInformation";
 
@@ -29,7 +28,7 @@ const Robot_2 = () => {
     })
       .then((res) => res.json())
       .then((data) => setDataFromApi(data))
-      .then(() => setIndexOfVideoToPlay(dataFromApi[0].video_id / 10 - 1));
+      .then(() => setIndexOfVideoToPlay((dataFromApi[0].video_id / 10) - 10));
   }
 
   async function videoFinished() {
@@ -52,7 +51,7 @@ const Robot_2 = () => {
       setTimeout(function () {
         videoElement.current.load();
         videoElement.current.play();
-      }, 150);
+      }, 400);
     }
 
     setTimeout(function () {
@@ -60,7 +59,7 @@ const Robot_2 = () => {
         videoElement.current.currentTime < 0.25 ||
         videoElement.current.currentTime === undefined
       ) {
-        console.log("fetch inside use effect");
+        console.log("Waiting data from server...");
         setIndexOfVideoToPlay(Math.random() * 100);
       }
     }, 3000);
@@ -76,7 +75,7 @@ const Robot_2 = () => {
           autoPlay={false}
           onEnded={videoFinished}
         >
-          <source src={Videos_Robot_1[IndexOfVideoToPlay]} type="video/mp4" />
+          <source src={Videos_Robot_2[IndexOfVideoToPlay]} type="video/mp4" />
         </video>
       ) : (
         <div className="waiting-div">

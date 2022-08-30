@@ -43,11 +43,11 @@ export const countVideos = (data) => {
   const counters = [Robot_1, Robot_2];
 
   data.forEach((element) => {
-    if (element.video_id > 0 && element.video_id <= 150) {
-      const index = element.video_id / 10 - 1;
+    if (element.video_id > 0 && element.video_id <= 90) {
+      const index = (element.video_id / 10) - 1;
       counters[0][index].counter++;
-    } else if (element.video_id > 160 && element.video_id <= 300) {
-      const index = element.video_id / 10 - 16;
+    } else if (element.video_id > 90 && element.video_id <= 180) {
+      const index = (element.video_id / 10) - 10;
       counters[1][index].counter++;
     }
   });
