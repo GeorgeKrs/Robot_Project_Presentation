@@ -12,8 +12,8 @@ def server():
 def client():
     client_path = r"C:\Users\Provik\Desktop\Robot_Project_Presentation\Web_Application\client"
     os.chdir(client_path)
-    # os.system("npm start")
-    os.system("serve -s build")
+    os.system("npm start")
+    # os.system("serve -s build")
     time.sleep(3)
 
 def handshake(): 
