@@ -13,7 +13,7 @@ The technologies used for this project are displayed below:
 4) Typescript (Frontend)
 5) React.JS (Frontend)
 6) Node.JS (Backend)
-7) Siemens Tia Portal V16
+7) Siemens Tia Portal V16 (PLC)
 8) Epson RC+ 7.0
 
 
