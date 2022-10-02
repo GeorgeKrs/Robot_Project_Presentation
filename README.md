@@ -8,12 +8,15 @@ both for R&D and for demonstration purposes. The UI consisted of 3 pages, one fo
 The technologies used for this project are displayed below:
 
 1) C# (Script for PC-PLC Communication)
-2) Python (Script for starting all dependencies)
+2) Python (Script for starting all communication scripts, server, client app)
 3) MySQL (Database)
 4) Typescript (Frontend)
 5) React.JS (Frontend)
 6) Node.JS (Backend)
 7) Siemens Tia Portal V16 (PLC)
 8) Epson RC+ 7.0
+
+You can find videos & images on the link below!
+https://drive.google.com/drive/folders/1fiX6zljqwlrUa5jv11zyfaN6qhNBVjTt?usp=sharing
 
 
